@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sm-sc-header{
+            background-color: yellow;
+            padding: 10px;
+        }
+        .iconic{
+            width: 30px;
+            margin: 3px;
+            padding: 3px;
+            background-color: black;
+        }
+        .sm-header-elem{
+            display: none;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5);
+            max-width: 100px ;
+            font-size: 16px;
+            border-radius: 5px;
+        
+        }
+        .sm-header-elem a{
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+        }
+        .sm-header-elem a:hover{
+            background-color: rgb(211, 204, 204);
+            color: rgb(39, 34, 34);
+        }
+        .cancel{
+            position: absolute;
+            text-align: center;
+            width: 15px;
+            font-size: 14px;
+            right: 5px;
+            top: 2px;
+            cursor: pointer;
+        }
+        .cancel:hover{
+            background-color: rgba(236, 232, 232, 0.5);
+            border-radius: 50%;
+            color: red;
+        }
+       /* @media all and (min-width: 600px){
+            .sm-sc-header{
+                display: none;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <div class="sm-sc-header">
+        <div class="iconic"></div>
+        <div class="iconic"></div>
+        <div class="iconic"></div>
+        <div class="sm-header-elem" id="sm-h-elem">
+            <span class="cancel">&#10006</span>
+          <a href="#third--section">Services</a>
+          <a href="products.html">Products</a>
+          <a href="#fourth-section">Solutions</a>
+          <a href="#client">Clients</a>
+        </div>
+
+        <script>
+           const contentElem = document.getElementById("sm-h-elem");
+           
+           .addEventListener("click", showHide)
+           function showHide(){
+              if(contentElem.style.display == "none"){
+                contentElem.style.display = "block"
+              }else{
+                contentElem.style.display = "none"
+              }
+           }
+        </script>
+</body>
+</html>
