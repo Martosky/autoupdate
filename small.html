@@ -6,14 +6,15 @@
     <title>Document</title>
     <style>
         .sm-sc-header{
-            background-color: yellow;
             padding: 10px;
+            position: relative;
         }
         .iconic{
-            width: 30px;
-            margin: 3px;
-            padding: 3px;
+            width: 25px;
+            margin: 5px 0;
+            height: 6px;
             background-color: black;
+            transition: 0.5s;
         }
         .sm-header-elem{
             display: none;
@@ -22,7 +23,7 @@
             max-width: 100px ;
             font-size: 16px;
             border-radius: 5px;
-        
+            overflow: hidden;
         }
         .sm-header-elem a{
             display: block;
@@ -31,23 +32,13 @@
             padding: 10px;
         }
         .sm-header-elem a:hover{
-            background-color: rgb(211, 204, 204);
-            color: rgb(39, 34, 34);
+            background-color: rgb(252, 251, 251);
+            color: rgb(255, 2, 2);
         }
-        .cancel{
-            position: absolute;
-            text-align: center;
-            width: 15px;
-            font-size: 14px;
-            right: 5px;
-            top: 2px;
-            cursor: pointer;
-        }
-        .cancel:hover{
-            background-color: rgba(236, 232, 232, 0.5);
-            border-radius: 50%;
-            color: red;
-        }
+        .change .ico1{transform: translate(0, 11px) rotate(-45deg); background-color: red;}
+        .change .ico2{opacity: 0;}
+        .change .ico3{transform: translate(0, -11px) rotate(45deg); background-color: red;} 
+        
        /* @media all and (min-width: 600px){
             .sm-sc-header{
                 display: none;
@@ -57,11 +48,13 @@
 </head>
 <body>
     <div class="sm-sc-header">
-        <div class="iconic"></div>
-        <div class="iconic"></div>
-        <div class="iconic"></div>
+        <div id="openmodal" onclick="myFunc(this)">
+           <div class="iconic ico1"></div>
+           <div class="iconic ico2"></div>
+           <div class="iconic ico3"></div>
+        </div>
+        
         <div class="sm-header-elem" id="sm-h-elem">
-            <span class="cancel">&#10006</span>
           <a href="#third--section">Services</a>
           <a href="products.html">Products</a>
           <a href="#fourth-section">Solutions</a>
@@ -70,15 +63,64 @@
 
         <script>
            const contentElem = document.getElementById("sm-h-elem");
-           
-           .addEventListener("click", showHide)
-           function showHide(){
-              if(contentElem.style.display == "none"){
-                contentElem.style.display = "block"
-              }else{
+           const modal = document.getElementById("openmodal");
+
+           modal.addEventListener("click", showHide)
+
+           function showHide(e){
+              if(contentElem.style.display == "block"){
                 contentElem.style.display = "none"
+              }else{
+                contentElem.style.display = "block"
               }
            }
+
+           function myFunc(e){
+            e.classList.toggle("change")
+           }
         </script>
+
+<div class="slide-body">
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 4</div>
+          <img src="photos/hik-vission.jpeg" alt="hik-vission">
+          <div class="text">Hikvission</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 4</div>
+          <img src="photos/smartlock2.jpg" alt="door-lock">
+          <div class="text">Smart Door Lock</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 4</div>
+          <img src="photos/camera&vd1.jpeg" alt="wireless intercom">
+          <div class="text">Wireless Intercom</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 4</div>
+          <img src="photos/slidebg1.jpeg" alt="wireless intercom">
+          <div class="text">Hik Camera</div>
+        </div>
+      
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+    </div>
 </body>
 </html>
