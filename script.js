@@ -5,6 +5,7 @@
 		body = doc.body;
                                     
 	/**
+     * 
      * Default configuration
      * @typ {Object}
      */
